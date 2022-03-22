@@ -1,6 +1,9 @@
-module ImmersiveStaminaFXConfig
+// Immersive Stamina FX; (c) v1ld, 2022-03-21
+// MIT License applies
 
-public class ImmersiveStaminaFXConfig {
+module ImmersiveStaminaFX
+
+public class ISFXConfig {
   // Set to false to disable stamina fx entirely
   public static func IsEnabled() -> Bool = true
 
@@ -22,7 +25,7 @@ public class ImmersiveStaminaFXConfig {
       case 1: return n"fx_health_low"; // Same as the low health effect with red wavy lines on the sides
       case 2: return n"status_drugged_heavy"; // Dims the sides of the screen and brightens the center
 
-      default: return ImmersiveStaminaFXConfig.StaminaFXName(1);
+      default: return ISFXConfig.StaminaFXName(1);
     }
   }
 
@@ -31,7 +34,7 @@ public class ImmersiveStaminaFXConfig {
       case 1: return "Red flashes like at low health";
       case 2: return "Dim screen edges, bright center";
 
-      default: return ImmersiveStaminaFXConfig.StaminaFXDisplayName(1);
+      default: return ISFXConfig.StaminaFXDisplayName(1);
     }
   }
 }

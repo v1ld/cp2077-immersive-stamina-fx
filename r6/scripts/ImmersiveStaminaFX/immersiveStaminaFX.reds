@@ -1,12 +1,12 @@
 // Immersive Stamina FX; (c) v1ld, 2022-03-19
 // MIT License applies
 
-import ImmersiveStaminaFXConfig.ImmersiveStaminaFXConfig
+import ImmersiveStaminaFX.ISFXConfig
 
 @wrapMethod(StaminaListener)
   public func OnStatPoolValueChanged(oldValue: Float, newValue: Float, percToPoints: Float) -> Void {
     wrappedMethod(oldValue, newValue, percToPoints);
-    if ImmersiveStaminaFXConfig.IsEnabled() {
+    if ISFXConfig.IsEnabled() {
       this.m_player.Mod_UpdateStaminaStateVFX(newValue);
     }
   }
@@ -16,8 +16,8 @@ import ImmersiveStaminaFXConfig.ImmersiveStaminaFXConfig
 
 @addMethod(PlayerPuppet)
   private final func Mod_UpdateStaminaStateVFX(staminaPerc: Float) -> Void {
-    let lowStaminaThreshold: Float = ImmersiveStaminaFXConfig.LowStaminaThreshold();
-    let vfxName: CName = ImmersiveStaminaFXConfig.StaminaFXName(ImmersiveStaminaFXConfig.StaminaFXIndex());
+    let lowStaminaThreshold: Float = ISFXConfig.LowStaminaThreshold();
+    let vfxName: CName = ISFXConfig.StaminaFXName(ISFXConfig.StaminaFXIndex());
     if staminaPerc >= lowStaminaThreshold && IsDefined(this.mod_staminaVfxBlackboard) {
       GameObjectEffectHelper.BreakEffectLoopEvent(this, vfxName);
       this.mod_staminaVfxBlackboard = null;
