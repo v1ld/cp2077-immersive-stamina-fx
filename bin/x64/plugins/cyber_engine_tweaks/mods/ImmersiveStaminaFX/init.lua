@@ -64,9 +64,9 @@ registerForEvent("onInit", function()
   LoadSettings()
   SetupSettingsMenu()
 
-  Override("ImmersiveStaminaFXConfig.ImmersiveStaminaFXConfig", "IsEnabled;", function(_) return settings.IsEnabled end)
-  Override("ImmersiveStaminaFXConfig.ImmersiveStaminaFXConfig", "LowStaminaThreshold;", function(_) return settings.LowStaminaThreshold end)
-  Override("ImmersiveStaminaFXConfig.ImmersiveStaminaFXConfig", "StaminaFXIndex;", function(_) return settings.StaminaFXIndex end)
+  Override("ImmersiveStaminaFX.ISFXConfig", "IsEnabled;", function(_) return settings.IsEnabled end)
+  Override("ImmersiveStaminaFX.ISFXConfig", "LowStaminaThreshold;", function(_) return settings.LowStaminaThreshold end)
+  Override("ImmersiveStaminaFX.ISFXConfig", "StaminaFXIndex;", function(_) return settings.StaminaFXIndex end)
 end)
 
 registerForEvent("onShutdown", function()
