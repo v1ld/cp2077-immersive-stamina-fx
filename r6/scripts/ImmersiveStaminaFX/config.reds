@@ -18,12 +18,13 @@ public class ISFXConfig {
 
   // DO NOT MODIFY ANYTHING BELOW THIS LINE
 
-  public static final func StaminaFXCount() -> Int32 = 2 // Total number of effects below
+  public static final func StaminaFXCount() -> Int32 = 3 // Total number of effects below
 
   public static final func StaminaFXName(index: Int32) -> CName {
     switch index {
       case 1: return n"fx_health_low"; // Same as the low health effect with red wavy lines on the sides
       case 2: return n"status_drugged_heavy"; // Dims the sides of the screen and brightens the center
+      case 3: return n"screen_scanning_loop"; // Screen is blurred for a brief interval at threshold
 
       default: return ISFXConfig.StaminaFXName(1);
     }
@@ -33,6 +34,7 @@ public class ISFXConfig {
     switch index {
       case 1: return "Red flashes like at low health";
       case 2: return "Dim screen edges, bright center";
+      case 3: return "Briefly blurry at threshold";
 
       default: return ISFXConfig.StaminaFXDisplayName(1);
     }
